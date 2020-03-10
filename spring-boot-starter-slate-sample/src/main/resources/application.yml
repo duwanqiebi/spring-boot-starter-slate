@@ -1,0 +1,13 @@
+slate:
+  enable: true
+  defaultTitle: API DOC
+  contextPath: /slate/*
+  resourcePath: slate
+  index: index.html.md
+  includes:
+    - _errors.md
+  languages:
+    - ruby
+    - python
+    - shell
+    - javascript
