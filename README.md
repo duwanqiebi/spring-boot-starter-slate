@@ -1,5 +1,7 @@
 # spring-boot-starter-slate
 
+use slate in spring boot java application 
+
 see [https://github.com/slatedocs/slate](https://github.com/slatedocs/slate)
 
 
