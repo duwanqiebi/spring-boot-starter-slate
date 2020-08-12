@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <version>1.0.0</version>
   <modules>
-    <module>spring-boot-starter-slate</module>
+<!--    <module>spring-boot-starter-slate</module>-->
     <module>spring-boot-starter-slate-sample</module>
   </modules>
 
