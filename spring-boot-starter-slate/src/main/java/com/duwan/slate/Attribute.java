@@ -13,8 +13,14 @@ import lombok.Data;
 @Builder
 public class Attribute {
 
+    /**
+     * contents
+     */
     private List<Content> contents;
 
+    /**
+     * html
+     */
     private String html;
 
 }
