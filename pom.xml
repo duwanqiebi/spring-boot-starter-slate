@@ -7,7 +7,7 @@
   <groupId>com.github.duwanqiebi</groupId>
   <artifactId>spring-boot-starter-slate-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <modules>
 <!--    <module>spring-boot-starter-slate</module>-->
     <module>spring-boot-starter-slate-sample</module>
