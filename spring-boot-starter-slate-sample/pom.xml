@@ -34,7 +34,7 @@
     </dependency>
 
     <dependency>
-      <groupId>com.duwan</groupId>
+      <groupId>com.github.duwanqiebi</groupId>
       <artifactId>spring-boot-starter-slate</artifactId>
       <version>1.0.0</version>
     </dependency>
