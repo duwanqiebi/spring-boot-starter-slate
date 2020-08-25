@@ -14,6 +14,12 @@ import lombok.Data;
 @ConfigurationProperties("slate")
 public class SlateProperties {
 
+    private Boolean authenticate;
+
+    private String userName;
+
+    private String password;
+
     private Boolean enabled;
 
     private String defaultTitle = "API DOCUMENT";

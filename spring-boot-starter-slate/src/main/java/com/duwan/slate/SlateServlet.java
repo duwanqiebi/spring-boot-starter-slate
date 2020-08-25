@@ -2,11 +2,16 @@ package com.duwan.slate;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Objects;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.StringUtils;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import com.alibaba.fastjson.JSON;
@@ -28,6 +33,30 @@ public class SlateServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        if(slateProperties.getAuthenticate()){
+            String authorization = request.getHeader("Authorization");
+            if(StringUtils.isEmpty(authorization)){
+                response.setHeader("WWW-Authenticate", "Basic realm=\"\"");
+                response.sendError(401);
+                return;
+            }
+            String decoded = new String(Base64.getDecoder().decode(authorization.substring(6)));
+            String[] users = decoded.split(":");
+            if(users.length != 2){
+                response.setHeader("WWW-Authenticate", "Basic realm=\"\"");
+                response.sendError(401);
+                return;
+            }
+            String userName = users[0];
+            String password = users[1];
+
+            if(! (Objects.equals(userName, slateProperties.getUserName()) && Objects.equals(password, slateProperties.getPassword()))){
+                response.setHeader("WWW-Authenticate", "Basic realm=\"\"");
+                response.sendError(401);
+                return;
+            }
+        }
+        
         String contextPath = request.getContextPath();
         String servletPath = request.getServletPath();
         String requestURI = request.getRequestURI();

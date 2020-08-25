@@ -5,7 +5,7 @@
   <parent>
     <artifactId>spring-boot-starter-slate-parent</artifactId>
     <groupId>com.github.duwanqiebi</groupId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
@@ -36,7 +36,7 @@
     <dependency>
       <groupId>com.github.duwanqiebi</groupId>
       <artifactId>spring-boot-starter-slate</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.2</version>
     </dependency>
 
   </dependencies>
